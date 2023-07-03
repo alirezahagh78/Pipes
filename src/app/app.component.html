@@ -1,0 +1,41 @@
+<div class="container-lg">
+  <h3 class="p-3 text-dark">Peyment Form</h3>
+  <div class="row">
+    <!-- name -->
+    <div class="form-group col">
+      <label>Reciver Name</label><br/>
+      <input type="text" class="form-control border border-success" (input)="onNameChange($event.target.value)" />
+    </div>
+    <div class="col-3">
+      <label>Reciver Name</label><br/>
+      {{nameInput | titlecase}}
+    </div>
+    <!-- date -->
+    <div class="form-group col-2">
+      <label>Reciver Date</label><br/>
+      <input type="date" class="form-control border border-success" (input)="onDateChange($event.target.value)" />
+    </div>
+    <div class="col-3">
+      <label>Reciver Date</label><br/>
+      {{dateInput | date : 'd MMMM yyyy'}}
+    </div><br/>
+
+    <!-- amount -->
+    <div class="form-group col-4">
+      <label>Amount</label><br/>
+      <input type="text" class="form-control border border-success" (input)="onAmountChange($event.target.value)" />
+    </div>
+    <div class="col-3">
+      <label>Amount</label><br/>
+      {{amountInput | currency : 'USD' :'symbol': '0.2'}}
+    </div>
+    <div class="form-group col">
+      <label>Mile</label><br/>
+      <input type="number" class="form-control border border-success" (input)="onMileChange($event.target.value)" />
+    </div>
+    <div class="col">
+      <label>Km</label><br/>
+      {{mileInput | convert : 'km' | number : '1.0-2'}}
+    </div>
+  </div>
+</div>
